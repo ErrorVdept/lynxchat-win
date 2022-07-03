@@ -1,0 +1,45 @@
+﻿<Window x:Class="ChatClient.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatClient"
+        mc:Ignorable="d"
+        xmlns:p="clr-namespace:ChatClient.Properties"
+        Title="RegisterWindow" Height="330" Width="300" Background="#20242C" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Label FontFamily="Roboto" Content="{x:Static p:Resources.Register}" FontSize="30" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel x:Name="MyStack" Grid.Row="1" >
+            <Label FontFamily="Roboto" Content="{x:Static p:Resources.UsernameLabel}" FontSize="20" FontWeight="Bold" Foreground="#FFFFF1F1" HorizontalAlignment="Center" />
+            <TextBox Name="TextBoxUsername" Style="{DynamicResource RoundTextBoxLogin}" FontSize="18" Background="#303540" Foreground="#FFCFCBDC" />
+            <Label FontFamily="Roboto" Content="{x:Static p:Resources.PasswordLabel}" FontSize="20" FontWeight="Bold" Foreground="#FFFFF1F1" HorizontalAlignment="Center" />
+            <PasswordBox Style="{DynamicResource PasswordBoxRoundLogin}" Name="TextBoxPassword" FontSize="18" Background="#303540" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" Foreground="#FFCFCBDC" />
+            <Label FontFamily="Roboto" Content="{x:Static p:Resources.OnionAddress}" FontSize="20" FontWeight="Bold" Foreground="#FFFFF1F1" HorizontalAlignment="Center" />
+            <TextBox Name="TextBoxOnion" Style="{DynamicResource RoundTextBoxLogin}" FontSize="18" Foreground="#FFCFCBDC" Background="#303540"/>
+            <Button FontFamily="Roboto"  Name="RegisterButton" Style="{DynamicResource ButtonRound}" Padding="0,5,0,5" Content="{x:Static p:Resources.Register}" Margin="0,25,0,0" Width="190" FontSize="22" FontWeight="Bold" BorderThickness="0,0,0,0" Foreground="#FFFBFAFD" Click="RegisterButton_Click">
+
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF1D53FC" Offset="1"/>
+                        <GradientStop Color="#FF092FA4" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
+            </Button>
+            
+        </StackPanel>
+    </Grid>
+</Window>
